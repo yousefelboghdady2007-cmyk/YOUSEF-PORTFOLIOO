@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignment 3 - Registration</title>
+
+    <style>
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+        body {
+
+            margin: 0;
+
+            padding: 30px 15px;
+
+            font-family: Arial, sans-serif;
+
+            background: #0b1120;
+
+            color: white;
+
+        }
+
+        h1 {
+
+            text-align: center;
+
+            color: #38bdf8;
+
+            margin-bottom: 25px;
+
+        }
+
+        .form-container {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            background: #151f33;
+
+            padding: 25px;
+
+            border: 1px solid #26354d;
+
+            border-radius: 12px;
+
+        }
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+        }
+
+        td {
+
+            padding: 12px;
+
+            border: 1px solid #334155;
+
+        }
+
+        td:first-child {
+
+            width: 32%;
+
+            font-weight: bold;
+
+            color: #38bdf8;
+
+        }
+
+        input:not([type="radio"]):not([type="checkbox"]):not([type="file"]),
+
+        select,
+
+        textarea {
+
+            width: 100%;
+
+            padding: 10px;
+
+            border: 1px solid #475569;
+
+            border-radius: 5px;
+
+            background: #0b1120;
+
+            color: white;
+
+        }
+
+        input[type="file"] {
+
+            max-width: 100%;
+
+        }
+
+        input[type="radio"],
+
+        input[type="checkbox"] {
+
+            accent-color: #38bdf8;
+
+        }
+
+        textarea {
+
+            resize: vertical;
+
+        }
+
+        .buttons {
+
+            text-align: center;
+
+            padding-top: 20px;
+
+        }
+
+        button {
+
+            padding: 11px 25px;
+
+            margin: 5px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background: #38bdf8;
+
+            color: #0b1120;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+        button:hover {
+
+            background: white;
+
+        }
+
+        a {
+
+            color: #38bdf8;
+
+        }
+
+        .back {
+
+            display: block;
+
+            text-align: center;
+
+            margin-top: 20px;
+
+            text-decoration: none;
+
+        }
+
+        @media (max-width: 550px) {
+
+            .form-container {
+
+                padding: 12px;
+
+            }
+
+            td {
+
+                padding: 8px;
+
+            }
+
+            td:first-child {
+
+                width: 38%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Registration Form</h1>
+
+    <div class="form-container">
+
+        <form action="Thankyou.html" method="get">
+
+            <input type="hidden" name="user_id" value="1001">
+
+            <table>
+
+                <tr>
+
+                    <td>First Name</td>
+
+                    <td>
+
+                        <input type="text" name="firstName"
+
+                        pattern="[A-Za-z]+"
+
+                        title="Letters only"
+
+                        required>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Last Name</td>
+
+                    <td>
+
+                        <input type="text" name="lastName"
+
+                        pattern="[A-Za-z]+"
+
+                        title="Letters only"
+
+                        required>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Email</td>
+
+                    <td>
+
+                        <input type="email" name="email" required>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Password</td>
+
+                    <td>
+
+                        <input type="password" name="password"
+
+                        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}"
+
+                        title="At least 8 characters, uppercase, lowercase, number and special character"
+
+                        required>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Repeat Password</td>
+
+                    <td>
+
+                        <input type="password" name="repeatPassword"
+
+                        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}"
+
+                        title="Use the required password format"
+
+                        required>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>User Picture</td>
+
+                    <td>
+
+                        <input type="file" name="picture" accept="image/*">
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Gender</td>
+
+                    <td>
+
+                        <label>
+
+                            <input type="radio" name="gender" value="Male" required>
+
+                            Male
+
+                        </label>
+
+                        <label>
+
+                            <input type="radio" name="gender" value="Female">
+
+                            Female
+
+                        </label>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Faculty</td>
+
+                    <td>
+
+                        <select name="faculty" required>
+
+                            <option value="">Select Faculty</option>
+
+                            <option value="Computer Science">Computer Science</option>
+
+                            <option value="Engineering">Engineering</option>
+
+                            <option value="Medicine">Medicine</option>
+
+                            <option value="Commerce">Commerce</option>
+
+                            <option value="Arts">Arts</option>
+
+                            <option value="Science">Science</option>
+
+                        </select>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Interests</td>
+
+                    <td>
+
+                        <label>
+
+                            <input type="checkbox" name="interests" value="Swimming">
+
+                            Swimming
+
+                        </label>
+
+                        <br>
+
+                        <label>
+
+                            <input type="checkbox" name="interests" value="Reading">
+
+                            Reading
+
+                        </label>
+
+                        <br>
+
+                        <label>
+
+                            <input type="checkbox" name="interests" value="Programming">
+
+                            Programming
+
+                        </label>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>About You</td>
+
+                    <td>
+
+                        <textarea name="about" rows="4"></textarea>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Phone Number</td>
+
+                    <td>
+
+                        <input type="tel" name="phone"
+
+                        pattern="01[0125][0-9]{8}"
+
+                        title="Enter a valid Egyptian mobile number (11 digits)"
+
+                        required>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>GPA</td>
+
+                    <td>
+
+                        <input type="number" name="gpa"
+
+                        min="0" max="4" step="0.1" required>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Date of Birth</td>
+
+                    <td>
+
+                        <input type="date" name="dob" required>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Terms</td>
+
+                    <td>
+
+                        <label>
+
+                            <input type="checkbox" name="terms" required>
+
+                            I agreed to the
+
+                            <a href="terms.html" target="_blank">
+
+                                terms and conditions
+
+                            </a>
+
+                        </label>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+            <div class="buttons">
+
+                <button type="submit">Submit</button>
+
+                <button type="reset">Reset</button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <a class="back" href="../../../index.html">
+
+        Back to Portfolio
+
+    </a>
+
+</body>
+
+</html>
